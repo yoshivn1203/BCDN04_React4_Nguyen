@@ -8,6 +8,8 @@ const initialData = {
   vip: [26, 27, 28, 29, 34, 35, 37, 36, 45, 44, 43, 42],
   selected: [],
   poster: 'https://upload.wikimedia.org/wikipedia/vi/f/f9/TheAvengers2012Poster.jpg',
+  description:
+    "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
 };
 
 const seatSlice = createSlice({
@@ -17,12 +19,13 @@ const seatSlice = createSlice({
     booking(state, action) {
       state.occupied = [...state.occupied, ...action.payload];
       state.selected = [];
+      alert('Booking ticket(s) successfully');
     },
     selecting(state, action) {
-      let { selected } = state;
+      const { selected } = state;
       const isSelected = selected.includes(action.payload);
       if (isSelected) {
-        selected = selected.filter((s) => s !== action.payload);
+        state.selected = selected.filter((s) => s !== action.payload);
       } else {
         selected.push(action.payload);
       }

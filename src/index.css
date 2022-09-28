@@ -138,8 +138,13 @@ body {
   padding-bottom: 2rem;
 }
 
-.movie-info h2 {
+.movie-info .title {
   padding-bottom: 1rem;
+  text-align: center;
+}
+
+.movie-info .description {
+  padding-bottom: 2rem;
 }
 
 .info .count {
