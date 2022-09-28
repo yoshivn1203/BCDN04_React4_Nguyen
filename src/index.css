@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: #222222;
+  color: white;
+  font-size: 14px;
+}
+
+.section-center {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+
+.cinema-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-items: center;
+  column-gap: 5rem;
+}
+
+.text-center {
+  text-align: center;
+  align-items: center;
+}
+
+.Movies {
+  margin-bottom: 24px;
+}
+
+.Movies select {
+  appearance: none;
+  background: white;
+  font-size: 14px;
+  margin-left: 12px;
+  border-radius: 4px;
+  padding: 6px 24px;
+}
+
+.ShowCase {
+  margin: 0 0 48px;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #3b3b3b;
+  padding: 12px;
+  border-radius: 4px;
+  color: #7e7e7e;
+}
+
+.ShowCase li {
+  margin: 0 12px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.Cinema {
+  margin-bottom: 18px;
+  perspective: 400px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-gap: 24px;
+}
+
+.Cinema .screen {
+  height: 70px;
+  max-width: 400px;
+  background: white;
+  width: 100%;
+  transform: rotateX(-30deg) scale(1.1);
+  box-shadow: 0 3px 10px 2px;
+  margin-bottom: 2rem;
+}
+
+.Cinema .seats {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(8, min-content);
+  align-items: center;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 2) {
+  margin-right: 1rem;
+}
+
+.Cinema .seats .seat:nth-of-type(8n + 6) {
+  margin-right: 1rem;
+}
+
+.Cinema .seats .seat:not(.occupied):hover,
+.Cinema .seats .seat:not(.occupied):focus {
+  cursor: pointer;
+  color: #c1eac5;
+  transform: scale(1.2);
+}
+
+.seat {
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  top: 1px;
+}
+
+.seat.selected {
+  color: #7bc47f !important;
+}
+
+.seat.occupied {
+  color: gray;
+}
+.seat.vip {
+  color: rgb(104, 104, 255);
+}
+
+.movie-info {
+  max-width: 350px;
+}
+
+.movie-info img {
+  background-size: cover;
+  padding-bottom: 2rem;
+}
+
+.movie-info h2 {
+  padding-bottom: 1rem;
+}
+
+.info .count {
+  color: #7bc47f;
+}
+
+.info .total {
+  color: #7bc47f;
+}
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #49c54f;
+}
+
+.btn:hover {
+  background-color: #1ebb28;
+}
+
+@media screen and (max-width: 800px) {
+  .cinema-container {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
