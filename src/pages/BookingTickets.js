@@ -19,13 +19,13 @@ import BookingInfo from '../components/BookingInfo';
 const BookingTickets = () => {
   const [activeStep, setActiveStep] = useState(0);
 
-  const { selectedSeats } = useSelector((state) => state.seat);
+  const { selectedSeats, selectedVipSeats } = useSelector((state) => state.seat);
   const dispatch = useDispatch();
 
   const steps = ['Chọn ghế', 'Chọn phương thức thanh toán', 'Hoàn thành'];
 
   const handleNext = () => {
-    if (selectedSeats.length > 0) {
+    if (selectedSeats.length > 0 || selectedVipSeats.length > 0) {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     } else {
       Swal.fire({
