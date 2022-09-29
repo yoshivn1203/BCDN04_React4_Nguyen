@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 const initialData = {
   selectedSeats: [],
+  selectedVipSeats: [],
   total: 0,
 };
 
@@ -11,19 +12,25 @@ const seatSlice = createSlice({
   initialState: initialData,
   reducers: {
     selecting(state, action) {
-      const { selectedSeats } = state;
-      const { tenGhe, giaVe } = action.payload;
-      const isSelected = selectedSeats.includes(tenGhe);
+      const { selectedSeats, selectedVipSeats } = state;
+      const { tenGhe, giaVe, loaiGhe } = action.payload;
+      const isSelected =
+        selectedSeats.includes(tenGhe) || selectedVipSeats.includes(tenGhe);
       if (isSelected) {
         state.selectedSeats = selectedSeats.filter((s) => s !== tenGhe);
+        state.selectedVipSeats = selectedVipSeats.filter((s) => s !== tenGhe);
         state.total -= giaVe;
       } else {
-        selectedSeats.push(tenGhe);
+        if (loaiGhe === 'Vip') selectedVipSeats.push(tenGhe);
+        else {
+          selectedSeats.push(tenGhe);
+        }
         state.total += giaVe;
       }
     },
     reset(state) {
       state.selectedSeats = [];
+      state.selectedVipSeats = [];
       state.total = 0;
     },
   },

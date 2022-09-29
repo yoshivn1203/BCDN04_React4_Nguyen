@@ -5,7 +5,7 @@ import { seatActions } from '../store/seatSelect';
 import { MdChair } from 'react-icons/md';
 
 const Seats = ({ data }) => {
-  const { selectedSeats } = useSelector((state) => state.seat);
+  const { selectedSeats, selectedVipSeats } = useSelector((state) => state.seat);
   const dispatch = useDispatch();
   return (
     <>
@@ -13,7 +13,9 @@ const Seats = ({ data }) => {
         <div className='screen' />
         <div className='seats'>
           {data.danhSachGhe.map((seat) => {
-            const isSelected = selectedSeats.includes(seat.tenGhe);
+            const isSelected =
+              selectedSeats.includes(seat.tenGhe) ||
+              selectedVipSeats.includes(seat.tenGhe);
             const isOccupied = seat.daDat;
             const isVip = seat.loaiGhe === 'Vip';
             return (

@@ -150,7 +150,12 @@ body {
   justify-self: flex-end;
 }
 
-.movie-info .info p:nth-child(11) {
+.movie-info .info p:nth-child(10),
+.movie-info .info p:nth-child(12) {
+  color: #f6aa00;
+}
+
+.movie-info .info p:nth-child(13) {
   font-weight: bold;
   font-size: 16px;
   margin-top: 20px;
