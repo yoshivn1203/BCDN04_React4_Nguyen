@@ -116,7 +116,7 @@ body {
   display: grid;
   justify-items: center;
   width: 450px;
-  max-height: 700px;
+  height: 800px;
   background-color: #0000003a;
   padding: 2rem 1rem;
   border-radius: 10px;
@@ -180,7 +180,6 @@ body {
 
 .section-center .css-1hv8oq8-MuiStepLabel-label.Mui-completed {
   color: #838383;
-  font-weight: 500;
 }
 
 .section-center .css-1vyamtt-MuiStepLabel-labelContainer {
@@ -192,7 +191,33 @@ body {
 }
 
 .MuiCollapse-wrapperInner.MuiCollapse-vertical.css-9l5vo-MuiCollapse-wrapperInner {
+  width: 1000px;
   display: grid;
   place-items: center;
+  text-align: center;
   padding: 3rem;
+}
+
+.MuiBox-root.css-0 {
+  justify-self: flex-end;
+}
+
+/* overwrite material ui css */
+
+.payment-method {
+  display: grid;
+  place-items: center;
+}
+
+.payment-method svg {
+  font-size: 30px;
+  padding-right: 5px;
+}
+
+/* overwrite sweatAlert button color */
+.swal2-actions .swal2-styled.swal2-confirm {
+  background-color: #1565c0;
+}
+.swal2-actions .swal2-styled.swal2-confirm:focus {
+  box-shadow: 0 0 0 3px #1565c0;
 }

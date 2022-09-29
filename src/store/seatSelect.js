@@ -7,7 +7,7 @@ const initialData = {
 };
 
 const seatSlice = createSlice({
-  name: 'authentication',
+  name: 'seat select',
   initialState: initialData,
   reducers: {
     selecting(state, action) {
@@ -21,6 +21,10 @@ const seatSlice = createSlice({
         selectedSeats.push(tenGhe);
         state.total += giaVe;
       }
+    },
+    reset(state) {
+      state.selectedSeats = [];
+      state.total = 0;
     },
   },
 });
