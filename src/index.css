@@ -37,7 +37,8 @@ body {
 }
 
 .ShowCase {
-  margin: 3rem auto;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   width: 100%;
   padding: 0;
   list-style: none;
@@ -196,7 +197,7 @@ body {
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 3rem;
+  padding: 0 3rem;
 }
 
 .steppers-box {
@@ -205,6 +206,7 @@ body {
 
 .Button-box {
   justify-self: flex-end;
+  margin-right: 2rem;
 }
 
 /* mui button disabled hover not allowed */
@@ -222,7 +224,6 @@ body {
 
 #payment-method svg {
   font-size: 30px;
-  margin-right: 10px;
 }
 
 /* overwrite sweatAlert button color */

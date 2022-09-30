@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { seatActions } from '../store/seatSelect';
-
 import { MdChair } from 'react-icons/md';
+import Timer from './Timer';
 
 const Seats = ({ data }) => {
   const { selectedSeats, selectedVipSeats } = useSelector((state) => state.seat);
@@ -10,6 +10,7 @@ const Seats = ({ data }) => {
   return (
     <>
       <div className='Cinema'>
+        <Timer />
         <div className='screen' />
         <div className='seats'>
           {data.danhSachGhe.map((seat) => {
