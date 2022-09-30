@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 
+:root {
+  --primary-white: #f1f1f1;
+  --primary-yellow: #f6aa00;
+  --primary-red: #ce0303;
+  --primary-green: #7bc47f;
+  --primary--blue: #1565c0;
+  --primary--gray: #7e7e7e;
+}
+
 *,
 *::after,
 *::before {
@@ -15,221 +24,16 @@ body {
   font-size: 14px;
 }
 
-/* .section-center {
+.section-center {
   width: 90%;
   max-width: 1200px;
   margin: 1rem auto;
-} */
-
-.cinema-container {
-  display: grid;
-  grid-template-columns: auto 600px;
-  padding: 1rem;
-}
-
-.text-center {
-  text-align: center;
-  align-items: center;
-}
-
-.Movies {
-  margin-bottom: 24px;
-}
-
-.ShowCase {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  background: #0000003a;
-  padding: 12px;
-  border-radius: 4px;
-}
-
-.ShowCase li {
-  margin: 0 12px;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.Cinema {
-  margin-bottom: 18px;
-  perspective: 400px;
-  width: 100%;
-  display: grid;
-  justify-items: center;
-  grid-gap: 24px;
-}
-
-.Cinema .screen {
-  height: 40px;
-  max-width: 600px;
-  background: #f1f1f1;
-  width: 100%;
-  transform: rotateX(-60deg) scale(1.1);
-  box-shadow: 0 3px 15px 5px;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.Cinema .seats {
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: repeat(16, min-content);
-  align-items: center;
-}
-
-.Cinema .seats .seat:nth-of-type(8n + 4) {
-  margin-right: 1.5rem;
-}
-
-.Cinema .seats .seat:not(.occupied):hover,
-.Cinema .seats .seat:not(.occupied):focus {
-  cursor: pointer;
-  color: #c1eac5;
-  transform: scale(1.2);
-}
-
-.seat {
-  display: inline-block;
-  width: 30px;
-  height: 24px;
-  transition: transform 0.3s ease-in-out;
-  position: relative;
-  top: 1px;
-}
-
-.seat.selected {
-  color: #7bc47f !important;
-}
-
-.seat.occupied {
-  color: gray;
-}
-.seat.vip {
-  color: #f6aa00;
-}
-
-.movie-info {
-  display: grid;
-  justify-items: center;
-  width: 450px;
-  height: 700px;
-  background-color: #0000003a;
-  margin-top: 1rem;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  overflow: auto;
-}
-
-.movie-info img {
-  background-size: cover;
-  width: 250px;
-}
-
-.movie-info .title {
-  color: #f6aa00;
-}
-
-.movie-info .info {
-  justify-self: stretch;
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-items: flex-start;
-  align-items: flex-start;
-  column-gap: 2rem;
-  row-gap: 1rem;
-}
-
-.movie-info .info p:nth-of-type(even) {
-  justify-self: flex-end;
-}
-
-.movie-info .info p:nth-child(10),
-.movie-info .info p:nth-child(12) {
-  color: #f6aa00;
-}
-
-.movie-info .info p:nth-child(13) {
-  font-weight: bold;
-  font-size: 16px;
-  margin-top: 10px;
-  color: #f6aa00;
-}
-
-.movie-info .info h2 {
-  margin-top: 5px;
-  justify-self: flex-end;
-  color: #ce0303;
-}
-
-.btn {
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: #49c54f;
-}
-
-.btn:hover {
-  background-color: #1ebb28;
-}
-
-/* overwrite material ui css */
-
-/* Steppers */
-.section-center .MuiStepLabel-label.Mui-active {
-  color: #f1f1f1;
-}
-
-.section-center .MuiStepLabel-label.Mui-completed {
-  color: #838383;
-}
-
-.section-center .MuiStepLabel-labelContainer {
-  color: #838383;
-}
-
-.MuiCollapse-wrapperInner.MuiCollapse-vertical {
-  width: 1000px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 0 3rem;
-}
-
-.steppers-box {
-  justify-self: center;
-}
-
-.Button-box {
-  justify-self: flex-end;
-  margin-right: 2rem;
-}
-
-/* mui button disabled hover not allowed */
-#payment-method .Button:disabled {
-  pointer-events: auto;
-  cursor: not-allowed;
-}
-
-/* overwrite material ui css */
-
-#payment-method {
-  display: grid;
-  place-items: center;
-}
-
-#payment-method svg {
-  font-size: 30px;
 }
 
 /* overwrite sweatAlert button color */
 .swal2-actions .swal2-styled.swal2-confirm {
-  background-color: #1565c0;
+  background-color: var(--primary--blue);
 }
 .swal2-actions .swal2-styled.swal2-confirm:focus {
-  box-shadow: 0 0 0 3px #1565c0;
+  box-shadow: 0 0 0 3px var(--primary--blue);
 }

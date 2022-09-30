@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Seats from '../components/Seats';
+import styled from 'styled-components';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
@@ -10,10 +10,10 @@ import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';
 import Swal from 'sweetalert2';
 import { BsPaypal } from 'react-icons/bs';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { seatActions } from '../store/seatSelect';
 import data from '../data/data.json';
+import Seats from '../components/Seats';
 import BookingInfo from '../components/BookingInfo';
 
 const BookingTickets = () => {
@@ -45,7 +45,7 @@ const BookingTickets = () => {
     dispatch(seatActions.reset());
   };
 
-  function getStepContent(step) {
+  const getStepContent = (step) => {
     switch (step) {
       case 0:
         return (
@@ -60,7 +60,7 @@ const BookingTickets = () => {
               className='Button'
               style={{
                 borderRadius: 35,
-                color: '#f1f1f1',
+                color: 'var(--primary-white)',
                 border: '2px solid',
                 padding: '10px 36px',
                 fontSize: '18px',
@@ -75,8 +75,8 @@ const BookingTickets = () => {
               className='Button'
               style={{
                 borderRadius: 35,
-                backgroundColor: '#f6aa00',
-                color: '#f1f1f1',
+                backgroundColor: 'var(--primary-yellow)',
+                color: 'var(--primary-white)',
                 padding: '10px 36px',
                 fontSize: '18px',
               }}
@@ -96,7 +96,7 @@ const BookingTickets = () => {
             <Box sx={{ mb: 5 }}>
               <Checkbox
                 checked={checked}
-                sx={{ color: '#f1f1f1' }}
+                sx={{ color: 'var(--primary-white)' }}
                 onChange={(e) => setChecked(e.target.checked)}
                 inputProps={{ 'aria-label': 'controlled' }}
               />
@@ -119,15 +119,15 @@ const BookingTickets = () => {
       default:
         return 'Unknown step';
     }
-  }
+  };
 
   return (
-    <div className='section-center cinema-container'>
+    <Wrapper>
       <Box className='steppers-box'>
         <Stepper activeStep={activeStep} orientation='vertical'>
           {steps.map((step, index) => (
             <Step key={index}>
-              <StepLabel style={{ color: 'blue' }}>{step}</StepLabel>
+              <StepLabel>{step}</StepLabel>
               <StepContent>
                 <Typography component='span'>{getStepContent(index)}</Typography>
                 <Box className='Button-box'>
@@ -135,7 +135,7 @@ const BookingTickets = () => {
                     {index !== 1 && (
                       <Button
                         style={{
-                          backgroundColor: '#f6aa00',
+                          backgroundColor: 'var(--primary-yellow)',
                         }}
                         variant='contained'
                         onClick={index === steps.length - 1 ? handleReset : handleNext}
@@ -167,8 +167,53 @@ const BookingTickets = () => {
         </Stepper>
       </Box>
       <BookingInfo data={data} />
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto 600px;
+  padding: 1rem;
+  .steppers-box {
+    justify-self: center;
+    //modify stepper label color
+    .MuiStepLabel-label.Mui-active {
+      color: var(--primary-white);
+    }
+    .MuiStepLabel-label.Mui-completed {
+      color: var(--primary--gray);
+    }
+    .MuiStepLabel-labelContainer {
+      color: var(--primary--gray);
+    }
+    .Button-box {
+      justify-self: flex-end;
+      margin-right: 2rem;
+    }
+    // main stepper collapse content
+    .MuiCollapse-wrapperInner.MuiCollapse-vertical {
+      width: 1000px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 0 3rem;
+    }
+
+    #payment-method {
+      display: grid;
+      place-items: center;
+      svg {
+        font-size: 30px;
+        margin-right: 10px;
+      }
+      // change mui button disable style
+      .Button:disabled {
+        pointer-events: auto;
+        cursor: not-allowed;
+      }
+    }
+  }
+`;
 
 export default BookingTickets;

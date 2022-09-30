@@ -55,7 +55,7 @@ const Timer = () => {
   return (
     <div className='container'>
       <h4>Thời gian giữ ghế</h4>
-      <h3 style={{ color: '#f6aa00' }}>{format(time)}</h3>
+      <h3 style={{ color: 'var(--primary-yellow)' }}>{format(time)}</h3>
     </div>
   );
 };
