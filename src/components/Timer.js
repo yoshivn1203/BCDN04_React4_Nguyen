@@ -54,8 +54,8 @@ const Timer = () => {
 
   return (
     <div className='container'>
-      <h3>Thời gian giữ ghế</h3>
-      <h2>{format(time)}</h2>
+      <h4>Thời gian giữ ghế</h4>
+      <h3 style={{ color: '#f6aa00' }}>{format(time)}</h3>
     </div>
   );
 };
