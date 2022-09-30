@@ -18,6 +18,7 @@ import BookingInfo from '../components/BookingInfo';
 
 const BookingTickets = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [checked, setChecked] = useState(false);
 
   const { selectedSeats, selectedVipSeats } = useSelector((state) => state.seat);
   const dispatch = useDispatch();
@@ -54,8 +55,9 @@ const BookingTickets = () => {
         );
       case 1:
         return (
-          <div className='payment-method'>
+          <div id='payment-method'>
             <Button
+              className='Button'
               style={{
                 borderRadius: 35,
                 color: '#f1f1f1',
@@ -63,12 +65,14 @@ const BookingTickets = () => {
                 padding: '10px 36px',
                 fontSize: '18px',
               }}
+              disabled={!checked}
               variant='outlined'
               onClick={handleNext}
             >
               Thanh Toán Tại Quầy
             </Button>
             <Button
+              className='Button'
               style={{
                 borderRadius: 35,
                 backgroundColor: '#f6aa00',
@@ -76,6 +80,7 @@ const BookingTickets = () => {
                 padding: '10px 36px',
                 fontSize: '18px',
               }}
+              disabled={!checked}
               variant='contained'
               sx={{ mt: 4, mb: 5 }}
               onClick={() =>
@@ -90,13 +95,14 @@ const BookingTickets = () => {
             </Button>
             <Box sx={{ mb: 5 }}>
               <Checkbox
-                color='primary'
-                checked
-                inputProps={{ 'aria-label': 'disabled checked checkbox' }}
+                checked={checked}
+                sx={{ color: '#f1f1f1' }}
+                onChange={(e) => setChecked(e.target.checked)}
+                inputProps={{ 'aria-label': 'controlled' }}
               />
-              Hiện nay chúng tôi chưa hỗ trợ dịch vụ hùy hoặc thay đổi thông tin vé đã
-              thanh toán. Quý khách vui lòng kiểm tra kỹ thông tin trước khi xác nhận
-              thanh toán.
+              Tôi đồng ý với tất cả các điều khoản về việc mua và sử dụng vé xem phim,
+              đồng thời xác nhận sẽ không hủy hoặc thay đổi thông tin đối với vé đã thanh
+              toán (khách hàng sẽ không được hoàn tiền trong trường hợp này).
             </Box>
           </div>
         );

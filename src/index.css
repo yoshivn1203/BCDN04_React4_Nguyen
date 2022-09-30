@@ -60,7 +60,7 @@ body {
   perspective: 400px;
   width: 100%;
   display: grid;
-  place-items: center;
+  justify-items: center;
   grid-gap: 24px;
 }
 
@@ -176,6 +176,8 @@ body {
 }
 
 /* overwrite material ui css */
+
+/* Steppers */
 .section-center .css-1hv8oq8-MuiStepLabel-label.Mui-active {
   color: #f1f1f1;
 }
@@ -188,11 +190,7 @@ body {
   color: #838383;
 }
 
-.section-center .css-1qm1lh {
-  text-align: end;
-}
-
-.MuiCollapse-wrapperInner.MuiCollapse-vertical.css-9l5vo-MuiCollapse-wrapperInner {
+.MuiCollapse-wrapperInner.MuiCollapse-vertical {
   width: 1000px;
   display: grid;
   place-items: center;
@@ -204,16 +202,22 @@ body {
   justify-self: flex-end;
 }
 
+/* mui button disabled hover not allowed */
+#payment-method .Button:disabled {
+  pointer-events: auto;
+  cursor: not-allowed;
+}
+
 /* overwrite material ui css */
 
-.payment-method {
+#payment-method {
   display: grid;
   place-items: center;
 }
 
-.payment-method svg {
+#payment-method svg {
   font-size: 30px;
-  padding-right: 5px;
+  margin-right: 10px;
 }
 
 /* overwrite sweatAlert button color */
