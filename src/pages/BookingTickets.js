@@ -108,7 +108,14 @@ const BookingTickets = () => {
         );
       case 2:
         return (
-          <Box sx={{ mb: 5 }}>
+          <Box
+            sx={{
+              mb: 5,
+              p: 5,
+              backgroundColor: 'var(--primary--transparent)',
+              borderRadius: 'var(--primary--borderRadius)',
+            }}
+          >
             <p>
               Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.<br></br>
               Thông tin vé đã được gửi đến email của bạn<br></br>

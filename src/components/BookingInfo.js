@@ -41,10 +41,10 @@ const Wrapper = styled.section`
   justify-items: center;
   width: 450px;
   height: 700px;
-  background-color: #0000003a;
+  background-color: var(--primary--transparent);
   margin-top: 1rem;
   padding: 2rem 1rem;
-  border-radius: 10px;
+  border-radius: var(--primary--borderRadius);
   overflow: auto;
   img {
     background-size: cover;

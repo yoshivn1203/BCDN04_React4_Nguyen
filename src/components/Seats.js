@@ -99,9 +99,9 @@ const Wrapper = styled.section`
     list-style: none;
     display: flex;
     justify-content: center;
-    background: #0000003a;
+    background: var(--primary--transparent);
     padding: 12px;
-    border-radius: 4px;
+    border-radius: var(--primary--borderRadius);
     li {
       margin: 0 12px;
       display: flex;
