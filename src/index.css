@@ -23,7 +23,7 @@ body {
 
 .cinema-container {
   display: grid;
-  grid-template-columns: 1fr 600px;
+  grid-template-columns: auto 600px;
   padding: 1rem;
 }
 
@@ -117,8 +117,9 @@ body {
   display: grid;
   justify-items: center;
   width: 450px;
-  height: 720px;
+  height: 700px;
   background-color: #0000003a;
+  margin-top: 1rem;
   padding: 2rem 1rem;
   border-radius: 10px;
   overflow: auto;
