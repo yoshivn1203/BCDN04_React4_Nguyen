@@ -178,15 +178,15 @@ body {
 /* overwrite material ui css */
 
 /* Steppers */
-.section-center .css-1hv8oq8-MuiStepLabel-label.Mui-active {
+.section-center .MuiStepLabel-label.Mui-active {
   color: #f1f1f1;
 }
 
-.section-center .css-1hv8oq8-MuiStepLabel-label.Mui-completed {
+.section-center .MuiStepLabel-label.Mui-completed {
   color: #838383;
 }
 
-.section-center .css-1vyamtt-MuiStepLabel-labelContainer {
+.section-center .MuiStepLabel-labelContainer {
   color: #838383;
 }
 
@@ -198,7 +198,11 @@ body {
   padding: 3rem;
 }
 
-.MuiBox-root.css-0 {
+.steppers-box {
+  justify-self: center;
+}
+
+.Button-box {
   justify-self: flex-end;
 }
 

@@ -123,14 +123,14 @@ const BookingTickets = () => {
 
   return (
     <div className='section-center cinema-container'>
-      <Box>
+      <Box className='steppers-box'>
         <Stepper activeStep={activeStep} orientation='vertical'>
           {steps.map((step, index) => (
             <Step key={index}>
               <StepLabel style={{ color: 'blue' }}>{step}</StepLabel>
               <StepContent>
                 <Typography component='span'>{getStepContent(index)}</Typography>
-                <Box>
+                <Box className='Button-box'>
                   <div>
                     {index !== 1 && (
                       <Button
