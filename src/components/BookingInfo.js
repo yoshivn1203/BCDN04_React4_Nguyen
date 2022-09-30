@@ -31,9 +31,6 @@ const BookingInfo = ({ data }) => {
         <p>Thành Tiền:</p>
         {total > 0 && <h2>{formatMoney(total)}</h2>}
       </div>
-      <div
-        style={{ borderTop: '2px solid #fff ', marginLeft: 20, marginRight: 20 }}
-      ></div>
     </div>
   );
 };
