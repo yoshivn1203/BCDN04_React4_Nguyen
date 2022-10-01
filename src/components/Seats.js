@@ -66,7 +66,7 @@ const Wrapper = styled.section`
     grid-gap: 24px;
     .screen {
       height: 40px;
-      max-width: 600px;
+      max-width: 800px;
       background: #f1f1f1;
       width: 100%;
       transform: rotateX(-60deg) scale(1.1);
@@ -80,7 +80,7 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(16, min-content);
       align-items: center;
       .seat:nth-of-type(8n + 4) {
-        margin-right: 1.5rem;
+        margin-right: 2rem;
       }
       .seat:not(.occupied):hover,
       .seat:not(.occupied):focus {
@@ -111,8 +111,8 @@ const Wrapper = styled.section`
   }
   .seat {
     display: inline-block;
-    width: 30px;
-    height: 24px;
+    width: 36px;
+    height: 30px;
     transition: transform 0.3s ease-in-out;
     position: relative;
     top: 1px;

@@ -65,6 +65,7 @@ const BookingTickets = () => {
                 padding: '10px 36px',
                 fontSize: '18px',
               }}
+              sx={{ mt: 4 }}
               disabled={!checked}
               variant='outlined'
               onClick={handleNext}
@@ -82,7 +83,7 @@ const BookingTickets = () => {
               }}
               disabled={!checked}
               variant='contained'
-              sx={{ mt: 4, mb: 5 }}
+              sx={{ mt: 5, mb: 5 }}
               onClick={() =>
                 Swal.fire({
                   icon: 'warning',
@@ -111,6 +112,7 @@ const BookingTickets = () => {
           <Box
             sx={{
               mb: 5,
+              mt: 5,
               p: 5,
               backgroundColor: 'var(--primary-transparent)',
               borderRadius: 'var(--primary-borderRadius)',
