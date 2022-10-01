@@ -73,9 +73,9 @@ const BookingTickets = () => {
             </Button>
             <Button
               className='Button'
+              id='primary-btn'
               style={{
                 borderRadius: 35,
-                backgroundColor: 'var(--primary-yellow)',
                 color: 'var(--primary-white)',
                 padding: '10px 36px',
                 fontSize: '18px',
@@ -112,8 +112,8 @@ const BookingTickets = () => {
             sx={{
               mb: 5,
               p: 5,
-              backgroundColor: 'var(--primary--transparent)',
-              borderRadius: 'var(--primary--borderRadius)',
+              backgroundColor: 'var(--primary-transparent)',
+              borderRadius: 'var(--primary-borderRadius)',
             }}
           >
             <p>
@@ -141,9 +141,7 @@ const BookingTickets = () => {
                   <div>
                     {index !== 1 && (
                       <Button
-                        style={{
-                          backgroundColor: 'var(--primary-yellow)',
-                        }}
+                        id='primary-btn'
                         variant='contained'
                         onClick={index === steps.length - 1 ? handleReset : handleNext}
                         sx={{ mr: 1 }}
@@ -189,10 +187,10 @@ const Wrapper = styled.div`
       color: var(--primary-white);
     }
     .MuiStepLabel-label.Mui-completed {
-      color: var(--primary--gray);
+      color: var(--primary-gray);
     }
     .MuiStepLabel-labelContainer {
-      color: var(--primary--gray);
+      color: var(--primary-gray);
     }
     .Button-box {
       justify-self: flex-end;

@@ -99,9 +99,9 @@ const Wrapper = styled.section`
     list-style: none;
     display: flex;
     justify-content: center;
-    background: var(--primary--transparent);
+    background: var(--primary-transparent);
     padding: 12px;
-    border-radius: var(--primary--borderRadius);
+    border-radius: var(--primary-borderRadius);
     li {
       margin: 0 12px;
       display: flex;
@@ -123,7 +123,7 @@ const Wrapper = styled.section`
   }
 
   .seat.occupied {
-    color: var(--primary--gray);
+    color: var(--primary-gray);
   }
   .seat.vip {
     color: var(--primary-yellow);

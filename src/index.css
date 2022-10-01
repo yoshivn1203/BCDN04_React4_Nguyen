@@ -3,12 +3,13 @@
 :root {
   --primary-white: #f1f1f1;
   --primary-yellow: #f6aa00;
+  --secondary-yellow: #e09900;
   --primary-red: #ce0303;
   --primary-green: #7bc47f;
-  --primary--blue: #1565c0;
-  --primary--gray: #7e7e7e;
-  --primary--transparent: #00000050;
-  --primary--borderRadius: 10px;
+  --primary-blue: #1565c0;
+  --primary-gray: #7e7e7e;
+  --primary-transparent: #00000050;
+  --primary-borderRadius: 10px;
 }
 
 *,
@@ -26,16 +27,27 @@ body {
   font-size: 14px;
 }
 
-.section-center {
-  width: 90%;
-  max-width: 1200px;
-  margin: 1rem auto;
+/* overwrite Mui button color */
+#primary-btn {
+  background-color: var(--primary-yellow);
+}
+#primary-btn:hover {
+  background-color: var(--secondary-yellow);
+}
+#primary-btn:hover:disabled {
+  background-color: var(--primary-yellow);
 }
 
 /* overwrite sweatAlert button color */
 .swal2-actions .swal2-styled.swal2-confirm {
-  background-color: var(--primary--blue);
+  background-color: var(--primary-blue);
 }
 .swal2-actions .swal2-styled.swal2-confirm:focus {
-  box-shadow: 0 0 0 3px var(--primary--blue);
+  box-shadow: 0 0 0 3px var(--primary-blue);
+}
+
+.section-center {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1rem auto;
 }
