@@ -94,16 +94,16 @@ const BookingTickets = () => {
               <BsPaypal />
               Thanh Toán Qua Paypal
             </Button>
-            <Box sx={{ mb: 5 }}>
+            <Box sx={{ mb: 5 }} textAlign='left'>
               <Checkbox
                 checked={checked}
-                sx={{ color: 'var(--primary-white)' }}
+                sx={{ color: 'var(--primary-yellow)', pl: 0 }}
                 onChange={(e) => setChecked(e.target.checked)}
                 inputProps={{ 'aria-label': 'controlled' }}
               />
-              Tôi đồng ý với tất cả các điều khoản về việc mua và sử dụng vé xem phim,
-              đồng thời xác nhận sẽ không hủy hoặc thay đổi thông tin đối với vé đã thanh
-              toán (khách hàng sẽ không được hoàn tiền trong trường hợp này).
+              Tôi đồng ý với các điều khoản về mua và sử dụng vé xem phim, đồng thời xác
+              nhận sẽ không hủy hoặc thay đổi thông tin đối với vé đã thanh toán (khách
+              hàng sẽ không được hoàn tiền trong trường hợp này).
             </Box>
           </div>
         );
@@ -156,7 +156,6 @@ const BookingTickets = () => {
                       <Button
                         variant='contained'
                         onClick={() => dispatch(seatActions.reset())}
-                        sx={{ mr: 3 }}
                       >
                         Chọn Lại Từ Đầu
                       </Button>
@@ -180,7 +179,8 @@ const BookingTickets = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: auto 600px;
+  grid-template-columns: auto auto;
+  justify-items: center;
   padding: 1rem;
   .steppers-box {
     justify-self: center;
@@ -195,24 +195,32 @@ const Wrapper = styled.div`
       color: var(--primary-gray);
     }
     .Button-box {
-      justify-self: flex-end;
-      margin-right: 2rem;
+      justify-self: end;
     }
     // main stepper collapse content
     .MuiCollapse-wrapperInner.MuiCollapse-vertical {
-      width: 1000px;
+      width: 880px;
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 0 3rem;
+      padding-left: 6rem;
+    }
+
+    .MuiStepContent-root {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .MuiTypography-root {
+      width: 800px;
     }
 
     #payment-method {
       display: grid;
       place-items: center;
       svg {
-        font-size: 30px;
-        margin-right: 10px;
+        font-size: 28px;
+        margin-right: 12px;
       }
       // change mui button disable style
       .Button:disabled {

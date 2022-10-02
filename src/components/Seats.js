@@ -66,7 +66,7 @@ const Wrapper = styled.section`
     grid-gap: 24px;
     .screen {
       height: 40px;
-      max-width: 800px;
+      max-width: 620px;
       background: #f1f1f1;
       width: 100%;
       transform: rotateX(-60deg) scale(1.1);
@@ -111,8 +111,8 @@ const Wrapper = styled.section`
   }
   .seat {
     display: inline-block;
-    width: 36px;
-    height: 30px;
+    width: 32px;
+    height: 28px;
     transition: transform 0.3s ease-in-out;
     position: relative;
     top: 1px;
