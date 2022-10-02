@@ -57,12 +57,17 @@ const Seats = ({ data }) => {
 };
 
 const Wrapper = styled.section`
+  background: var(--primary-transparent);
+  border-radius: var(--primary-borderRadius);
+  box-shadow: var(--primary-boxShadow);
+
   .Cinema {
-    margin-bottom: 18px;
     perspective: 400px;
     width: 100%;
     display: grid;
     justify-items: center;
+    padding-top: 1rem;
+    margin-top: 1rem;
     grid-gap: 24px;
     .screen {
       height: 40px;
@@ -99,9 +104,7 @@ const Wrapper = styled.section`
     list-style: none;
     display: flex;
     justify-content: center;
-    background: var(--primary-transparent);
     padding: 12px;
-    border-radius: var(--primary-borderRadius);
     li {
       margin: 0 12px;
       display: flex;

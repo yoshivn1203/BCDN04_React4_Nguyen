@@ -42,9 +42,10 @@ const Wrapper = styled.section`
   width: 450px;
   height: 700px;
   background-color: var(--primary-transparent);
-  margin-top: 2rem;
-  padding: 2rem 1rem;
   border-radius: var(--primary-borderRadius);
+  box-shadow: var(--primary-boxShadow);
+  margin-top: 56px;
+  padding: 2rem 1rem;
   overflow: auto;
   img {
     background-size: cover;

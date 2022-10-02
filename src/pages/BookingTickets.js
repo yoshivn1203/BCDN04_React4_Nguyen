@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 import { BsPaypal } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import { seatActions } from '../store/seatSelect';
+import bg from '../assets/jungle.jpg';
 import data from '../data/data.json';
 import Seats from '../components/Seats';
 import BookingInfo from '../components/BookingInfo';
@@ -116,6 +117,7 @@ const BookingTickets = () => {
               p: 5,
               backgroundColor: 'var(--primary-transparent)',
               borderRadius: 'var(--primary-borderRadius)',
+              boxShadow: 'var(--primary-boxShadow)',
             }}
           >
             <p>
@@ -178,6 +180,9 @@ const BookingTickets = () => {
 };
 
 const Wrapper = styled.div`
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bg});
+  background-size: cover;
+  min-height: 100vh;
   display: grid;
   margin: 0 auto;
   grid-template-columns: auto auto;
@@ -190,10 +195,10 @@ const Wrapper = styled.div`
       color: var(--primary-white);
     }
     .MuiStepLabel-label.Mui-completed {
-      color: var(--primary-gray);
+      color: var(--secondary-gray);
     }
     .MuiStepLabel-labelContainer {
-      color: var(--primary-gray);
+      color: var(--secondary-gray);
     }
     .Button-box {
       justify-self: end;
@@ -204,12 +209,12 @@ const Wrapper = styled.div`
       display: grid;
       place-items: center;
       text-align: center;
-      padding-left: 6rem;
+      padding-left: 70px;
     }
 
     .MuiStepContent-root {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 0px;
+      padding-right: 0px;
     }
 
     .MuiTypography-root {
@@ -230,19 +235,31 @@ const Wrapper = styled.div`
       }
     }
   }
+
   @media screen and (max-width: 1439px) {
     column-gap: 1rem;
     .steppers-box {
       .MuiCollapse-wrapperInner.MuiCollapse-vertical {
         width: 600px;
+        padding-left: 28px;
       }
       .MuiTypography-root {
         width: 600px;
       }
     }
   }
+  @media screen and (max-width: 1367px) {
+    .steppers-box {
+      .MuiCollapse-wrapperInner.MuiCollapse-vertical {
+        padding-left: 0;
+      }
+      .MuiStepContent-root {
+        padding-left: 10px;
+      }
+    }
+  }
   @media screen and (min-width: 2000px) {
-    width: 80%;
+    justify-items: start;
   }
 `;
 
