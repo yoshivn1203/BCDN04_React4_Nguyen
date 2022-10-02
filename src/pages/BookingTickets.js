@@ -229,6 +229,17 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media screen and (max-width: 1450px) {
+    column-gap: 1rem;
+    .steppers-box {
+      .MuiCollapse-wrapperInner.MuiCollapse-vertical {
+        width: 600px;
+      }
+      .MuiTypography-root {
+        width: 600px;
+      }
+    }
+  }
 `;
 
 export default BookingTickets;

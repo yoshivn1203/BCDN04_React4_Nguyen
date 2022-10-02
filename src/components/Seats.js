@@ -128,6 +128,18 @@ const Wrapper = styled.section`
   .seat.vip {
     color: var(--primary-yellow);
   }
+  @media screen and (max-width: 1450px) {
+    .Cinema {
+      grid-gap: 16px;
+      .screen {
+        max-width: 500px;
+      }
+      .seat {
+        width: 24px;
+        height: 20px;
+      }
+    }
+  }
 `;
 
 export default Seats;

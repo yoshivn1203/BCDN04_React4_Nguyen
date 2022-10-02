@@ -80,6 +80,14 @@ const Wrapper = styled.section`
       color: var(--primary-red);
     }
   }
+  @media screen and (max-width: 1450px) {
+    width: 350px;
+    height: 650px;
+
+    img {
+      width: 200px;
+    }
+  }
 `;
 
 export default BookingInfo;
