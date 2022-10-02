@@ -128,7 +128,7 @@ const Wrapper = styled.section`
   .seat.vip {
     color: var(--primary-yellow);
   }
-  @media screen and (max-width: 1450px) {
+  @media screen and (max-width: 1439px) {
     .Cinema {
       grid-gap: 16px;
       .screen {

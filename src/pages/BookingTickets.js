@@ -179,6 +179,7 @@ const BookingTickets = () => {
 
 const Wrapper = styled.div`
   display: grid;
+  margin: 0 auto;
   grid-template-columns: auto auto;
   justify-items: center;
   padding: 1rem;
@@ -229,7 +230,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media screen and (max-width: 1450px) {
+  @media screen and (max-width: 1439px) {
     column-gap: 1rem;
     .steppers-box {
       .MuiCollapse-wrapperInner.MuiCollapse-vertical {
@@ -239,6 +240,9 @@ const Wrapper = styled.div`
         width: 600px;
       }
     }
+  }
+  @media screen and (min-width: 2000px) {
+    width: 80%;
   }
 `;
 
