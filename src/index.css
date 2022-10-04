@@ -9,6 +9,7 @@
   --primary-red: #ce0303;
   --primary-green: #7bc47f;
   --primary-blue: #1565c0;
+  --secondary-blue: #50a2ff;
   --primary-gray: #696969;
   --secondary-gray: #a0a0a0;
   --primary-transparent: #00000060;
@@ -48,7 +49,8 @@ body {
 #primary-btn:hover:disabled {
   background-color: var(--secondary-gray);
 }
-#button-disabled:disabled {
+#secondary-btn:disabled {
+  background-color: var(--secondary-gray);
   pointer-events: auto;
   cursor: not-allowed;
 }

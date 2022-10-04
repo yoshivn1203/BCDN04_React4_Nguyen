@@ -21,7 +21,7 @@ const Seats = ({ data }) => {
             const isOccupied = seat.daDat;
             const isVip = seat.loaiGhe === 'Vip';
             return (
-              <MdChair
+              <span
                 key={seat.tenGhe}
                 className={`seat ${
                   isOccupied
@@ -33,7 +33,9 @@ const Seats = ({ data }) => {
                     : ''
                 }`}
                 onClick={isOccupied ? null : () => dispatch(seatActions.selecting(seat))}
-              />
+              >
+                <MdChair />
+              </span>
             );
           })}
         </div>
@@ -76,6 +78,7 @@ const Wrapper = styled.section`
       width: 100%;
       transform: rotateX(-60deg) scale(1.1);
       box-shadow: 0 3px 15px 5px;
+      filter: drop-shadow(4px 25px 20px rgba(255, 255, 255, 0.5));
       margin-top: 0.5rem;
       margin-bottom: 2rem;
     }
@@ -84,7 +87,7 @@ const Wrapper = styled.section`
       grid-gap: 0.5rem;
       grid-template-columns: repeat(16, min-content);
       align-items: center;
-      .seat:nth-of-type(8n + 4) {
+      span:nth-of-type(8n + 4) {
         margin-right: 2rem;
       }
       .seat:not(.occupied):hover,
@@ -118,17 +121,45 @@ const Wrapper = styled.section`
     transition: transform 0.3s ease-in-out;
     position: relative;
     top: 1px;
+    svg {
+      width: 32px;
+      height: 28px;
+    }
+    &.selected {
+      color: var(--secondary-blue) !important;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background: transparent;
+        border: 1px solid var(--secondary-blue);
+        animation: show-off 0.8s;
+        visibility: hidden;
+      }
+    }
+    &.occupied {
+      color: var(--primary-gray);
+    }
+    &.seat.vip {
+      color: var(--primary-yellow);
+    }
   }
 
-  .seat.selected {
-    color: var(--primary-green) !important;
-  }
+  @keyframes show-off {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
 
-  .seat.occupied {
-    color: var(--primary-gray);
-  }
-  .seat.vip {
-    color: var(--primary-yellow);
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
   }
 
   @media screen and (max-width: 1399px) {
@@ -139,6 +170,10 @@ const Wrapper = styled.section`
         max-width: 500px;
       }
       .seat {
+        width: 24px;
+        height: 20px;
+      }
+      svg {
         width: 24px;
         height: 20px;
       }

@@ -58,17 +58,16 @@ const BookingTickets = () => {
         return (
           <div id='payment-method'>
             <Button
-              id='button-disabled'
+              id='secondary-btn'
               style={{
                 borderRadius: 35,
                 color: `${checked ? 'var(--primary-white)' : 'var(--primary-gray)'}`,
-                border: '2px solid',
                 padding: '10px 36px',
                 fontSize: '18px',
               }}
               sx={{ mt: 4 }}
               disabled={!checked}
-              variant='outlined'
+              variant='contained'
               onClick={handleNext}
             >
               Thanh Toán Tại Quầy
@@ -156,14 +155,20 @@ const BookingTickets = () => {
 
                     {index === 0 && (
                       <Button
-                        variant='contained'
+                        style={{ color: 'var(--primary-white)', border: '1px solid' }}
+                        variant='outlined'
                         onClick={() => dispatch(seatActions.reset())}
                       >
                         bỏ chọn tất cả
                       </Button>
                     )}
                     {index === 1 && (
-                      <Button variant='contained' onClick={handleBack} sx={{ mr: 1 }}>
+                      <Button
+                        style={{ color: 'var(--primary-white)', border: '1px solid' }}
+                        variant='outlined'
+                        onClick={handleBack}
+                        sx={{ mr: 1 }}
+                      >
                         &larr; trở về
                       </Button>
                     )}
