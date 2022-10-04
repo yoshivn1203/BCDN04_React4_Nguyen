@@ -159,7 +159,7 @@ const BookingTickets = () => {
                         variant='contained'
                         onClick={() => dispatch(seatActions.reset())}
                       >
-                        Chọn Lại Từ Đầu
+                        bỏ chọn tất cả
                       </Button>
                     )}
                     {index === 1 && (
@@ -237,24 +237,17 @@ const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 1439px) {
-    column-gap: 1rem;
     .steppers-box {
-      .MuiCollapse-wrapperInner.MuiCollapse-vertical {
-        width: 600px;
-        padding-left: 28px;
-      }
-      .MuiTypography-root {
-        width: 600px;
+      .Button-box {
+        padding-right: 50px;
       }
     }
   }
   @media screen and (max-width: 1367px) {
     .steppers-box {
       .MuiCollapse-wrapperInner.MuiCollapse-vertical {
-        padding-left: 0;
-      }
-      .MuiStepContent-root {
-        padding-left: 10px;
+        width: 800px;
+        padding-left: 20px;
       }
     }
   }

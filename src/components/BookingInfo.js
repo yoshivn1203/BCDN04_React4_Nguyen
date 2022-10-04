@@ -40,7 +40,7 @@ const Wrapper = styled.section`
   display: grid;
   justify-items: center;
   width: 450px;
-  height: 700px;
+  max-height: 750px;
   background-color: var(--primary-transparent);
   border-radius: var(--primary-borderRadius);
   box-shadow: var(--primary-boxShadow);
