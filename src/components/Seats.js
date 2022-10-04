@@ -72,7 +72,7 @@ const Wrapper = styled.section`
     .screen {
       height: 40px;
       max-width: 620px;
-      background: #f1f1f1;
+      background: var(--primary-white);
       width: 100%;
       transform: rotateX(-60deg) scale(1.1);
       box-shadow: 0 3px 15px 5px;
@@ -90,7 +90,6 @@ const Wrapper = styled.section`
       .seat:not(.occupied):hover,
       .seat:not(.occupied):focus {
         cursor: pointer;
-        color: #c1eac5;
         transform: scale(1.2);
       }
     }
@@ -131,6 +130,7 @@ const Wrapper = styled.section`
   .seat.vip {
     color: var(--primary-yellow);
   }
+
   @media screen and (max-width: 1439px) {
     width: 750px;
     .Cinema {
