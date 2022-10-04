@@ -38,10 +38,19 @@ body {
   background-color: var(--primary-yellow);
 }
 #primary-btn:hover {
-  background-color: var(--secondary-yellow);
+  background-color: var(--primary-yellow);
+}
+#primary-btn:disabled {
+  background-color: var(--secondary-gray);
+  pointer-events: auto;
+  cursor: not-allowed;
 }
 #primary-btn:hover:disabled {
-  background-color: var(--primary-yellow);
+  background-color: var(--secondary-gray);
+}
+#button-disabled:disabled {
+  pointer-events: auto;
+  cursor: not-allowed;
 }
 
 /* overwrite sweatAlert button color */

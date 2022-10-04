@@ -131,7 +131,7 @@ const Wrapper = styled.section`
     color: var(--primary-yellow);
   }
 
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1399px) {
     width: 750px;
     .Cinema {
       grid-gap: 16px;

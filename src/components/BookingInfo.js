@@ -81,7 +81,7 @@ const Wrapper = styled.section`
       color: var(--primary-red);
     }
   }
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1399px) {
     width: 350px;
     height: 650px;
 

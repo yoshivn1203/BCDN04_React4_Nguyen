@@ -58,10 +58,10 @@ const BookingTickets = () => {
         return (
           <div id='payment-method'>
             <Button
-              className='Button'
+              id='button-disabled'
               style={{
                 borderRadius: 35,
-                color: 'var(--primary-white)',
+                color: `${checked ? 'var(--primary-white)' : 'var(--primary-gray)'}`,
                 border: '2px solid',
                 padding: '10px 36px',
                 fontSize: '18px',
@@ -74,11 +74,10 @@ const BookingTickets = () => {
               Thanh Toán Tại Quầy
             </Button>
             <Button
-              className='Button'
               id='primary-btn'
               style={{
                 borderRadius: 35,
-                color: 'var(--primary-white)',
+                color: `${checked ? 'var(--primary-white)' : 'var(--primary-gray)'}`,
                 padding: '10px 36px',
                 fontSize: '18px',
               }}
@@ -95,7 +94,7 @@ const BookingTickets = () => {
               <BsPaypal />
               Thanh Toán Qua Paypal
             </Button>
-            <Box sx={{ mb: 5 }} textAlign='left'>
+            <Box textAlign='left'>
               <Checkbox
                 checked={checked}
                 sx={{ color: 'var(--primary-yellow)', pl: 0 }}
@@ -103,8 +102,8 @@ const BookingTickets = () => {
                 inputProps={{ 'aria-label': 'controlled' }}
               />
               Tôi đồng ý với các điều khoản về mua và sử dụng vé xem phim, đồng thời xác
-              nhận sẽ không hủy hoặc thay đổi thông tin đối với vé đã thanh toán (khách
-              hàng sẽ không được hoàn tiền trong trường hợp này).
+              nhận sẽ không hủy hoặc thay đổi thông tin đối với vé đã mua (khách hàng sẽ
+              không được hoàn tiền).
             </Box>
           </div>
         );
@@ -112,7 +111,8 @@ const BookingTickets = () => {
         return (
           <Box
             sx={{
-              mb: 5,
+              width: '95%',
+              mb: 4,
               mt: 5,
               p: 5,
               backgroundColor: 'var(--primary-transparent)',
@@ -141,7 +141,7 @@ const BookingTickets = () => {
               <StepLabel>{step}</StepLabel>
               <StepContent>
                 <Typography component='span'>{getStepContent(index)}</Typography>
-                <Box className='Button-box'>
+                <Box>
                   <div>
                     {index !== 1 && (
                       <Button
@@ -200,9 +200,7 @@ const Wrapper = styled.div`
     .MuiStepLabel-labelContainer {
       color: var(--secondary-gray);
     }
-    .Button-box {
-      justify-self: end;
-    }
+
     // main stepper collapse content
     .MuiCollapse-wrapperInner.MuiCollapse-vertical {
       width: 880px;
@@ -222,28 +220,23 @@ const Wrapper = styled.div`
     }
 
     #payment-method {
+      width: 95%;
+      background-color: var(--primary-transparent);
+      border-radius: var(--primary-borderRadius);
+      box-shadow: var(--primary-boxShadow);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.5rem;
       display: grid;
       place-items: center;
       svg {
         font-size: 28px;
         margin-right: 12px;
       }
-      // change mui button disable style
-      .Button:disabled {
-        pointer-events: auto;
-        cursor: not-allowed;
-      }
     }
   }
 
-  @media screen and (max-width: 1439px) {
-    .steppers-box {
-      .Button-box {
-        padding-right: 50px;
-      }
-    }
-  }
-  @media screen and (max-width: 1367px) {
+  @media screen and (max-width: 1299px) {
     .steppers-box {
       .MuiCollapse-wrapperInner.MuiCollapse-vertical {
         width: 800px;
