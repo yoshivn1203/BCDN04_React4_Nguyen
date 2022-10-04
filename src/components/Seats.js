@@ -121,10 +121,6 @@ const Wrapper = styled.section`
     transition: transform 0.3s ease-in-out;
     position: relative;
     top: 1px;
-    svg {
-      width: 32px;
-      height: 28px;
-    }
     &.selected {
       color: var(--secondary-blue) !important;
       &::after {
@@ -140,6 +136,10 @@ const Wrapper = styled.section`
         animation: show-off 0.8s;
         visibility: hidden;
       }
+    }
+    svg {
+      width: 32px;
+      height: 28px;
     }
     &.occupied {
       color: var(--primary-gray);
@@ -172,10 +172,14 @@ const Wrapper = styled.section`
       .seat {
         width: 24px;
         height: 20px;
-      }
-      svg {
-        width: 24px;
-        height: 20px;
+        &.selected::after {
+          width: 24px;
+          height: 24px;
+        }
+        svg {
+          width: 24px;
+          height: 20px;
+        }
       }
     }
   }
