@@ -39,7 +39,7 @@ body {
   background-color: var(--primary-yellow);
 }
 #primary-btn:hover {
-  background-color: var(--primary-yellow);
+  background-color: var(--secondary-yellow);
 }
 #primary-btn:disabled {
   background-color: var(--secondary-gray);
