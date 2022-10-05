@@ -9,7 +9,8 @@ import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';
 import Swal from 'sweetalert2';
-import { BsPaypal } from 'react-icons/bs';
+import { FaCcVisa } from 'react-icons/fa';
+import { GiMoneyStack } from 'react-icons/gi';
 import { useSelector, useDispatch } from 'react-redux';
 import { seatActions } from '../store/seatSelect';
 import bg from '../assets/jungle.jpg';
@@ -70,6 +71,7 @@ const BookingTickets = () => {
               variant='contained'
               onClick={handleNext}
             >
+              <GiMoneyStack />
               Thanh Toán Tại Quầy
             </Button>
             <Button
@@ -90,8 +92,8 @@ const BookingTickets = () => {
                 })
               }
             >
-              <BsPaypal />
-              Thanh Toán Qua Paypal
+              <FaCcVisa />
+              Thanh Toán Qua Thẻ
             </Button>
             <Box textAlign='left'>
               <Checkbox
